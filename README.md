@@ -8,3 +8,8 @@
 
 ---
 
+## 前言-勘误表以及如何联系我们
+
+- 页码：第3页
+- 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531
+- 应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531
