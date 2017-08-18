@@ -29,13 +29,14 @@
 ## 1.2 客户端JavaScript
 
 - 位置：第15页上方一大段代码，倒数第二行的函数
-- 错误内容：`function hide(event) { event.target.style.visibility = "hidden"; }`
+- 错误内容：`function hide(event) { event.target.style.visibility = "hidden"; }`，该函数为考虑IE8浏览器。
 - 应更正为：
 
 ```js
 function hide(event) {
     // srcElement属性在IE8中要用到，target属性则用于Chrome及Firefox
     var target = event.target ? event.target : event.srcElement;
+    target.style.visibility = "hidden";
 }
 ```
 
@@ -63,5 +64,16 @@ function hide(event) {
 ## 3.1.3 JavaScript中的算术运算
 
 - 位置：第37页最上方的一大段代码
-- 错误内容：`Number.MAX_VALUE + 1`及`-Number.MIN_VALUE - 1`这两段代码
+- 错误内容：`Number.MAX_VALUE + 1`及`-Number.MIN_VALUE - 1`这两段代码，计算得到的值并不是`Infinity`及`-Infinity`。
 - 应更正为：`Number.MAX_VALUE + 1`及`1 / Number.MIN_VALUE`，这样两段代码的结果才能分别为`Infinity`及`-Infinity`。
+
+## 3.2.1 字符串直接量
+
+- 位置：第39页最下方，倒数第二行的代码
+- 错误内容：`"one\ // 用三行代码……`，拆分成多行的字符串直接量，字符串后面的注释内容也会被当成字符串的一部分。
+- 应更正为：
+
+```js
+// 用三行代码……
+one\
+```
