@@ -12,7 +12,7 @@
 勘误表格式说明：
 
 ```text
-1.2.3 标题 // 错误所在的章、节、小节及该节/小节的名称
+1.2.3 标题 // 错误所在的章、节、小节的编号，以及该节/小节的名称
 位置：第Z页中间 // 错误所在的位置
 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531 // 出现错误的内容
 应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531 // 错误所应更正为的内容
@@ -24,7 +24,7 @@
 
 - 位置：第3页
 - 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531
-- 应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531
+- 应更正为：[http://oreilly.com/catalog/errata.csp?isbn=9780596805531](http://oreilly.com/catalog/errata.csp?isbn=9780596805531)
 
 ## 1.2 客户端JavaScript
 
@@ -34,12 +34,12 @@
 
 ```js
 function hide(event) {
-    // srcElement属性在IE8中要用到，target属性则用于Chrome及Firefox
-    var target = event.target ? event.target : event.srcElement;
+    // srcElement属性在IE8中要用到，target属性则用于Chrome及Firefox
+    var target = event.target ? event.target : event.srcElement;
 }
 ```
 
-## 1.2 客户端JavaScript
+## 1.2 客户端JavaScript后面的示例
 
 - 位置：第17页中下部的一大段代码，第四、第五个`tr`标签对的开始标签及之后一行
 - 错误内容：开始标签`<tr>`缺少对应的关闭标签`</tr>`
