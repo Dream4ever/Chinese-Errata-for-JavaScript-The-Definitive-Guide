@@ -13,10 +13,10 @@
 
 ```text
 1.2.3 标题 // 错误所在的章、节、小节的编号，以及该节/小节的名称
-位置：第Z页中间 // 错误所在的位置
-错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531 // 出现错误的内容
-错误原因：XXXX // 出错的原因
-应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531 // 错误所应更正为的内容
+位置：第Z页中间。 // 错误所在的位置
+错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531。 // 出现错误的内容
+错误原因：XXXX。 // 出错的原因
+应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531。 // 错误所应更正为的内容
 ```
 
 ---
@@ -24,14 +24,14 @@
 ## 前言-勘误表以及如何联系我们
 
 - 位置：第3页。
-- 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531
-- 错误原因：网址给错了
-- 应更正为：[http://oreilly.com/catalog/errata.csp?isbn=9780596805531](http://oreilly.com/catalog/errata.csp?isbn=9780596805531)
+- 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531。
+- 错误原因：网址给错了。
+- 应更正为：[http://oreilly.com/catalog/errata.csp?isbn=9780596805531](http://oreilly.com/catalog/errata.csp?isbn=9780596805531)。
 
 ## 1.2 客户端JavaScript
 
 - 位置：第15页上方的一大段代码。
-- 错误内容：倒数第二行的函数`function hide(event) { event.target.style.visibility = "hidden"; }`
+- 错误内容：倒数第二行的函数`function hide(event) { event.target.style.visibility = "hidden"; }`。
 - 错误原因：该函数未考虑IE8浏览器。
 - 应更正为：
 
@@ -55,7 +55,7 @@ function hide(event) {
     <td><input id="zipcode" onchange=calculate();"></td>
 ```
 
-- 错误原因：开始标签`<tr>`缺少对应的关闭标签`</tr>`
+- 错误原因：开始标签`<tr>`缺少对应的关闭标签`</tr>`。
 - 应更正为：
 
 ```html
@@ -68,7 +68,7 @@ function hide(event) {
 ## 3.1.3 JavaScript中的算术运算
 
 - 位置：第37页最上方的一大段代码。
-- 错误内容：`Number.MAX_VALUE + 1`及`-Number.MIN_VALUE - 1`
+- 错误内容：`Number.MAX_VALUE + 1`及`-Number.MIN_VALUE - 1`。
 - 错误原因：上面两段代码计算得到的值并不是`Infinity`及`-Infinity`。
 - 应更正为：`Number.MAX_VALUE + 1`及`1 / Number.MIN_VALUE`，这样两段代码的结果才能分别为`Infinity`及`-Infinity`。
 
