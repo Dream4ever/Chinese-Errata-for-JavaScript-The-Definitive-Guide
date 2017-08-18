@@ -22,8 +22,19 @@
 
 ## 前言-勘误表以及如何联系我们
 
-- 页码：第3页
+- 位置：第3页
 - 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531
 - 应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531
 
-## 
+## 第一章-第二节客户端JavaScript
+
+- 位置：第15页上方一大段代码，倒数第二行的函数
+- 错误内容：`function hide(event) { event.target.style.visibility = "hidden"; }`
+- 应更正为：
+
+```js
+function hide(event) {
+    // srcElement属性在IE8中要用到，target属性则用于Chrome及Firefox
+    var target = event.target ? event.target : event.srcElement;
+}
+```
