@@ -12,7 +12,7 @@
 勘误表格式说明：
 
 ```text
-第X章-第Y节 // 错误所在的章和节
+1.2.3 标题 // 错误所在的章、节、小节及该节/小节的名称
 位置：第Z页中间 // 错误所在的位置
 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531 // 出现错误的内容
 应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531 // 错误所应更正为的内容
@@ -26,7 +26,7 @@
 - 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531
 - 应更正为：http://oreilly.com/catalog/errata.csp?isbn=9780596805531
 
-## 第一章-第二节客户端JavaScript
+## 1.2 客户端JavaScript
 
 - 位置：第15页上方一大段代码，倒数第二行的函数
 - 错误内容：`function hide(event) { event.target.style.visibility = "hidden"; }`
@@ -39,7 +39,7 @@ function hide(event) {
 }
 ```
 
-## 第一章-第二节客户端JavaScript
+## 1.2 客户端JavaScript
 
 - 位置：第17页中下部的一大段代码，第四、第五个`tr`标签对的开始标签及之后一行
 - 错误内容：开始标签`<tr>`缺少对应的关闭标签`</tr>`
@@ -59,3 +59,9 @@ function hide(event) {
 <tr><td>Zipcode (to find lenders):</td>
     <td><input id="zipcode" onchange=calculate();"></td></tr>
 ```
+
+## 3.1.3 JavaScript中的算术运算
+
+- 位置：第37页最上方的一大段代码
+- 错误内容：`Number.MAX_VALUE + 1`及`-Number.MIN_VALUE - 1`这两段代码
+- 应更正为：`Number.MAX_VALUE + 1`及`1 / Number.MIN_VALUE`，这样两段代码的结果才能分别为`Infinity`及`-Infinity`。
