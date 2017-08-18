@@ -38,3 +38,24 @@ function hide(event) {
     var target = event.target ? event.target : event.srcElement;
 }
 ```
+
+## 第一章-第二节客户端JavaScript
+
+- 位置：第17页中下部的一大段代码，第四、第五个`tr`标签对的开始标签及之后一行
+- 错误内容：开始标签`<tr>`缺少对应的关闭标签`</tr>`
+
+```html
+<tr><td>Repayment Period (years):</td>
+    <td><input id="years" onchange=calculate();"></td>
+<tr><td>Zipcode (to find lenders):</td>
+    <td><input id="zipcode" onchange=calculate();"></td>
+```
+
+- 应更正为：
+
+```html
+<tr><td>Repayment Period (years):</td>
+    <td><input id="years" onchange=calculate();"></td></tr>
+<tr><td>Zipcode (to find lenders):</td>
+    <td><input id="zipcode" onchange=calculate();"></td></tr>
+```
