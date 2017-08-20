@@ -186,9 +186,49 @@ p.goto + p.void // 输出 3
 - 错误原因：`主体` 写成了 `主题`。
 - 应更正为：`作为属性访问主体的对象和数组……`。
 
-### 4.9.1 相等和不等运算符
+## 4.9.1 相等和不等运算符
 
 - 位置：第 75 页上方，严格相等比较过程的第二条。
 - 错误内容：`如果两个值都是 null 或者都是 undefined，则它们不相等。`。
 - 错误原因：两个 `null` 或者两个 `undefined` 的值是相等的，只有 `NaN` 才和自己不相等。
 - 应更正为：`如果两个值都是 null 或者都是 undefined，则它们相等。`。
+
+## 4.9.4 instanceof 运算符
+
+- 位置：第 78 页中部的示例代码。
+- 错误内容：
+
+```js
+d instanceof Date;
+d instanceof Object;
+d instanceof Number;
+
+a instanceof Array;
+a instanceof Object;
+a instanceof RegExp;
+```
+
+- 错误原因：书中的语句后面都有分号 `;`，但表达式后面都没有分号 `;`。应去掉这些表达式末尾的分号，以保持格式的统一。
+- 应更正为：
+
+```js
+d instanceof Date
+d instanceof Object
+d instanceof Number
+
+a instanceof Array
+a instanceof Object
+a instanceof RegExp
+```
+
+- 位置：该小节的第二段正文 `需要注意的是……` 中的第三行。
+- 错误内容：`如果右操作数不是函数，则抛出一个类型错误异常`。
+- 错误原因：`instanceof` 运算符判断一个对象是不是一个类的实例，右操作数是类，不是函数。
+- 应更正为：`如果右操作数不是类，则抛出一个类型错误异常`。
+
+## 4.10.2 逻辑或（||）
+
+- 位置：第 81 页最上方的示例代码。
+- 错误内容：`p = p || {};`。
+- 错误原因：因为是要将 o 的成员属性复制到 p 中，所以应该是如果没有传入 o，才使用一个新创建的对象。
+- 应更正为：`p = o || {};`。
