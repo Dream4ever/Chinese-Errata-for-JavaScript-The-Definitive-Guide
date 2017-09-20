@@ -84,7 +84,7 @@ function hide(event) {
 - 位置：第 37 页最上方的一大段代码。
 - 错误内容：`Number.MAX_VALUE + 1` 及 `-Number.MIN_VALUE - 1`。
 - 错误原因：上面两段代码计算得到的值并不是 `Infinity` 及 `-Infinity`。
-- 应更正为：`Number.MAX_VALUE + 1` 及 `1 / Number.MIN_VALUE`，这样两段代码的结果才能分别为 `Infinity` 及 `-Infinity`。
+- 应更正为：`Number.MAX_VALUE + 1E300` 及 `-1 / Number.MIN_VALUE`，这样两段代码的结果才能分别为 `Infinity` 及 `-Infinity`。
 - 延伸阅读：知乎上的一个回答，分析得很到位：[为什么在 js 中 Number.MAX_VALUE + 1 不是 Infinity？](https://www.zhihu.com/question/24423421/answer/140269663)。
 
 ## 3.1.5 日期和时间
