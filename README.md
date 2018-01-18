@@ -2,7 +2,7 @@
 
 官方英文原版勘误表：[Errata for JavaScript: The Definitive Guide](http://www.oreilly.com/catalog/errata.csp?isbn=9780596805531)
 
-同时还汇集整理了以下几篇文章中的勘误，一并感谢。
+同时还汇集整理了以下文章中的勘误，一并感谢。
 
 [JavaScript 权威指南勘误记录](https://blog.xinshangshangxin.com/2015/04/05/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E5%8B%98%E8%AF%AF%E8%AE%B0%E5%BD%95/)。
 
@@ -279,6 +279,16 @@ a instanceof RegExp
 - 错误内容：`参照 3.6 节`
 - 错误原因：应当是 `参照 3.7 节`，3.6 节是 `包装对象`，3.7 节是 `不可变对象`
 - 应更正为：`参照 3.7 节`
+
+## 第七章 数组
+
+## 7.12 作为数组的字符串
+
+- 位置：第 163 页底部，三行代码中的第一行
+- 错误内容：`var s = test`
+- 错误原因：这里是为了新建一个字符串，却忘了给字符串加引号
+- 应更正为：`var s = "test"`
+
 
 ## 10.1.4 选择、分组和引用
 
