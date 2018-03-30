@@ -29,7 +29,7 @@
 
 - 位置：第 3 页。
 - 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531。
-- 错误原因：网址给错了。
+- 错误原因：网址已变更。
 - 应更正为：[http://oreilly.com/catalog/errata.csp?isbn=9780596805531](http://oreilly.com/catalog/errata.csp?isbn=9780596805531)。
 
 ## 1.1 JavaScript语言核心
