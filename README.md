@@ -2,7 +2,7 @@
 
 官方英文原版勘误表：[Errata for JavaScript: The Definitive Guide](http://www.oreilly.com/catalog/errata.csp?isbn=9780596805531)
 
-同时还汇集整理了以下几篇文章中的勘误，一并感谢。
+同时还汇集整理了以下文章中的勘误，一并感谢。
 
 [JavaScript 权威指南勘误记录](https://blog.xinshangshangxin.com/2015/04/05/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E5%8B%98%E8%AF%AF%E8%AE%B0%E5%BD%95/)。
 
@@ -29,7 +29,7 @@
 
 - 位置：第 3 页。
 - 错误内容：本小节的第一个网址 http:/oreilly.com/catalog/9780596805531。
-- 错误原因：网址给错了。
+- 错误原因：网址已变更。
 - 应更正为：[http://oreilly.com/catalog/errata.csp?isbn=9780596805531](http://oreilly.com/catalog/errata.csp?isbn=9780596805531)。
 
 ## 1.1 JavaScript语言核心
@@ -85,7 +85,7 @@ function hide(event) {
 - 错误内容：`Number.MAX_VALUE + 1` 及 `-Number.MIN_VALUE - 1`。
 - 错误原因：上面两段代码计算得到的值并不是 `Infinity` 及 `-Infinity`。
 - 应更正为：`Number.MAX_VALUE + 1E300` 及 `-1 / Number.MIN_VALUE`，这样两段代码的结果才能分别为 `Infinity` 及 `-Infinity`。
-- 延伸阅读：知乎上的一个回答，分析得很到位：[为什么在 js 中 Number.MAX_VALUE + 1 不是 Infinity？](https://www.zhihu.com/question/24423421/answer/140269663)。
+- 延伸阅读：知乎上的一个回答，分析得很到位：[为什么在 js 中 Number.MAX_VALUE + 1 不是 Infinity？](https://www.zhihu.com/question/24423421/answer/140269663)
 
 ## 3.1.5 日期和时间
 
@@ -98,7 +98,7 @@ function hide(event) {
 
 - 位置：第 39 页上部黑框内，四行代码中的第二行。
 - 错误内容：`var e = "e";`。
-- 错误原因：后面的值 `e` 只是普通的英文字母，不是原文中所说的17位内码 `0x1d452` 所表示的自然对数 `𝑒`。
+- 错误原因：后面的值 `e` 只是普通的英文字母，不是原文中所说的 17 位内码 `0x1d452` 所表示的自然对数 `𝑒`。
 - 应更正为：`var e = "𝑒";`。
 - 延伸阅读：阮一峰老师写的 [Unicode 与 JavaScript 详解](http://www.ruanyifeng.com/blog/2014/12/unicode.html)。
 
@@ -172,7 +172,7 @@ one\
 
 ## 4.4 属性访问表达式
 
-- 位置：第63 页最下方的一行文字。
+- 位置：第 63 页最下方的一行文字。
 - 错误内容：`如果属性名称是一个保留字或者包含空格和标点符号……，则必须使用方括号的写法`。
 - 错误原因：如果属性名称是一个保留字，那么句点的写法也是可以用的。
 
@@ -275,14 +275,41 @@ a instanceof RegExp
 
 ## 第六章 对象
 
-- 位置：第 118页，倒数第三段第二行末尾括号中的文字
+- 位置：第 118 页，倒数第三段第二行末尾括号中的文字
 - 错误内容：`参照 3.6 节`
 - 错误原因：应当是 `参照 3.7 节`，3.6 节是 `包装对象`，3.7 节是 `不可变对象`
 - 应更正为：`参照 3.7 节`
 
-128页，6.4标题下面第二行，hasOwnProperty写错。
+## 6.4 检测属性
 
-135页，最下面代码上一段文字，Object.defineProperty写错。
+- 位置：第 128 页，6.4 节标题下方第一段文字的第二行
+- 错误内容：`hasOwnPreperty()`
+- 错误原因：写错了方法名
+- 应更正为：`hasOwnProperty()`
+
+## 6.7 属性的特性
+
+- 位置：第 135 页，页面下方整个代码段之上的一段正文
+- 错误内容：`则需要调用 Object.definePeoperty()`
+- 错误原因：写错了方法名
+- 应更正为：`则需要调用 Object.defineProperty()`
+
+=======
+## 第七章 数组
+
+## 7.12 作为数组的字符串
+
+- 位置：第 163 页底部，三行代码中的第一行
+- 错误内容：`var s = test`
+- 错误原因：这里是为了新建一个字符串，却忘了给字符串加引号
+- 应更正为：`var s = "test"`
+
+## 7.12 作为数组的字符串
+
+- 位置：第 163 页底部倒数第二行
+- 错误内容：`但是如果给Array.isArray()...`
+- 错误原因：这里是为了强调，虽然前面说“字符串的行为类似于只读数组”，但它终究并不是数组。所以用 `typeof` 判断字符串得到的是 `string`，给 `Array.isArray()` 方法传入字符串的话返回的也是 false。所以不能说是 `但是`，应该是 `而且`。
+- 应更正为：`而且给Array.isArray()...`
 
 ## 10.1.4 选择、分组和引用
 
