@@ -2,6 +2,8 @@
 
 官方英文原版勘误表：[Errata for JavaScript: The Definitive Guide](http://www.oreilly.com/catalog/errata.csp?isbn=9780596805531)
 
+> 更新进度：英文勘误最后更新至 Page 144（含）。
+
 同时还汇集整理了以下文章中的勘误，一并感谢。
 
 [JavaScript 权威指南勘误记录](https://blog.xinshangshangxin.com/2015/04/05/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E5%8B%98%E8%AF%AF%E8%AE%B0%E5%BD%95/)。
