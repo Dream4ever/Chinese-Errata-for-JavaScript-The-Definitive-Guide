@@ -296,6 +296,13 @@ a instanceof RegExp
 - 错误原因：写错了方法名
 - 应更正为：`hasOwnProperty()`
 
+## 6.5 枚举属性
+
+- 位置：第 131 页上方的第一个函数 `merge()`。
+- 错误内容：`if (o.hasOwnProperty[prop])`。
+- 错误原因：`hasOwnProperty` 是方法，这里不能用中括号，要用小括号。
+- 应更正为：`if (o.hasOwnProperty(prop))`。
+
 ## 6.7 属性的特性
 
 - 位置：第 135 页，页面下方整个代码段之上的一段正文
