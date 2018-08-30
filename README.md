@@ -280,7 +280,7 @@ a instanceof RegExp
 - 位置：第 117 页倒数第三行代码。
 - 错误内容：`var name=[=expr][,...];`。
 - 错误原因：多了一个等号。
-- 应更正为：`var name=[expr][,...];`。
+- 应更正为：`var name[=expr][,...];`。
 
 ## 第六章 对象
 
