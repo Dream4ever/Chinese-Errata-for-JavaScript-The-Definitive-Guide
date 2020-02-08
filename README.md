@@ -332,6 +332,12 @@ var count = [1,,3]; // => [1, empty, 3]
 var undefs = [,,]; // => [empty x 2]
 ```
 
+## 7.2 数组元素的读和写
+
+- 错误内容：数组的特别之处在于，当使用小于 2<sup>32</sup> 的非负整数作为属性名时数组会自动维护其length属性。
+- 错误解释：索引的取值范围是小于2<sup>32</sup>-1的非负整数，也就是0~2<sup>32</sup>-2之间的整数
+- 应更正为：数组的特别之处在于，当使用小于 2<sup>32</sup> - 1 的非负整数作为属性名时数组会自动维护其length属性。
+
 ## 7.3 稀疏数组
 
 - 位置：第 147 页，节标题之下的第四个段落及后续的四行代码。
@@ -350,6 +356,36 @@ var a1 = [,,,]; // 数组是 [empty × 3]
 0 in a1; // => false
 ```
 
+## 7.7 多维数组
+
+- 位置：第 151 页多维数组描述第第一行
+- 错误内容：`JavaScript不支持真正的多维数组，但可以利用数组的数组来近似`。
+- 错误原因：书写错误
+- 应更正为：`JavaScript不支持真正的多维数组，但可以利用数组的数组来解释`。
+
+## 7.10 数组类型
+
+- 错误内容：
+
+```javascript
+Array.isArray = Function.isArray || function (o) {
+    return typeof o === 'object' // 过滤基础类型
+    Object.prototype.toString.call(o) === '[object Array]'
+}
+```
+
+- 错误解释：这里应该书写错误。书中使用了 `Function.isArray` ，上下文的意思是 ES5 才有`Array.isArray` 方法，所以需要判断，如果是 ES5 之前的版本，此处需要手动实现这个方法。
+- 应更正为：
+
+```javascript
+Array.isArray = Array.isArray || function (o) {
+    return typeof o === 'object' // 过滤基础类型
+    Object.prototype.toString.call(o) === '[object Array]'
+}
+```
+
+
+
 ## 7.12 作为数组的字符串
 
 - 位置：第 163 页底部，三行代码中的第一行。
@@ -363,13 +399,6 @@ var a1 = [,,,]; // 数组是 [empty × 3]
 - 错误内容：`但是如果给Array.isArray()...`。
 - 错误原因：这里是为了强调，虽然前面说“字符串的行为类似于只读数组”，但它终究并不是数组。所以用 `typeof` 判断字符串得到的是 `string`，给 `Array.isArray()` 方法传入字符串的话返回的也是 false。所以不能说是 `但是`，应该是 `而且`。
 - 应更正为：`而且给Array.isArray()...`。
-
-## 7.7 多维数组
-
-- 位置：第 151 页多维数组描述第第一行
-- 错误内容：`JavaScript不支持真正的多维数组，但可以利用数组的数组来近似`。
-- 错误原因：书写错误
-- 应更正为：`JavaScript不支持真正的多维数组，但可以利用数组的数组来解释`。
 
 ## 第八章 函数
 
