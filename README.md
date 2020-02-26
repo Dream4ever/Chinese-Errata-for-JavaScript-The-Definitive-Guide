@@ -443,3 +443,19 @@ Array.isArray = Array.isArray || function (o) {
 - 错误内容：`(/[a-z]+(\d+)/)`。
 - 错误原因：看文字描述的部分，只是想要抽取所检索到的匹配中的数字部分，那么只对数字部分的正则表达式加括号就行了，没必要给整个正则表达式再加一个括号。
 - 应更正为：`/[a-z]+(\d+)/`。
+
+
+
+## 第13章 Web浏览器中的JavaScript
+
+### 13.2.4 HTML中的事件处理程序
+
+- 位置：p317，10.1.4节最后一段的第一句话。
+
+- 错误内容：HTML中定义的事件处理程序的属性可以包含任意条JavaScript语句，相互之间用**逗号**分隔。
+
+- 错误原因：应该是用**分号**分隔，而不是逗号，JavaScript的语句是使用分号分隔的。
+
+  此处应为翻译错误，犀牛书英文版原文：“Event handler attributes defined in HTML may include any number of JavaScript statements, separated from each other by **semicolons**.”
+
+- 应更正为：分号。
