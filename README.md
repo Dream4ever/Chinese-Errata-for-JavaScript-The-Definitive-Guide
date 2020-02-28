@@ -454,8 +454,29 @@ Array.isArray = Array.isArray || function (o) {
 
 - 错误内容：HTML中定义的事件处理程序的属性可以包含任意条JavaScript语句，相互之间用**逗号**分隔。
 
-- 错误原因：应该是用**分号**分隔，而不是逗号，JavaScript的语句是使用分号分隔的。
+- 错误类型：翻译错误。
 
-  此处应为翻译错误，犀牛书英文版原文：“Event handler attributes defined in HTML may include any number of JavaScript statements, separated from each other by **semicolons**.”
+- 错误描述：应该是用**分号**分隔，而不是逗号，JavaScript的语句是使用分号分隔的。
+
+  此处应为翻译错误，犀牛书英文版原文：Event handler attributes defined in HTML may include any number of JavaScript statements, separated from each other by **semicolons**.
 
 - 应更正为：分号。
+
+
+
+### 13.3.4 客户端 JavaScript 时间线
+
+- 位置：P325，列表的第三项，最后一句话。
+
+- 错误内容：它们可以看到自己的`<script>`元素和它们之前的所有文档元素，并且可能或**干脆不可能**访问其他的文档内容。
+
+- 错误类型：翻译错误。
+
+- 错误描述：这里翻译有点奇怪，因为async是异步加载，下载完成之后会尽快执行，不能确定解析器解析到哪一行HTML代码，所以不确定能够访问哪一些HTML代码，**可能也可能不能**访问其他的文档内容。这里翻译加了“干脆”两字有点奇怪。
+
+  犀牛书英文版原文：They can see their own `<script>` element and all document  elements that come before it, and **may or may not** have access to additional document content.
+
+  另外，这里additional翻译成“更多的”比“其他的”要更好一点。
+
+- 应更正为：它们可以看到自己的`<script>`元素和它们之前的所有文档元素，并且可能有也可能没有权限访问更多的文档内容。
+
