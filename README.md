@@ -448,6 +448,16 @@ Array.isArray = Array.isArray || function (o) {
 
 ## 第13章 Web浏览器中的JavaScript
 
+### 13.1 客户端JavaScript
+
+- 位置：例13-1
+- 错误内容：示例代码可以运行但不合理。
+- 错误原因：示例代码可以运行但不合理。
+- 错误解释：代码中使用了for遍历elements，而实际html只有`<div class="reveal">`
+- 应更正为：https://github.com/davidflanagan/javascript6_examples/blob/master/examples/13.01.reveal.html
+
+
+
 ### 13.2.4 HTML中的事件处理程序
 
 - 位置：p317，10.1.4节最后一段的第一句话。
@@ -479,4 +489,14 @@ Array.isArray = Array.isArray || function (o) {
   另外，这里additional翻译成“更多的”比“其他的”要更好一点。
 
 - 应更正为：它们可以看到自己的`<script>`元素和它们之前的所有文档元素，并且可能有也可能没有权限访问更多的文档内容。
+
+
+
+### 13.6.2 同源策略
+
+- 位置：P336，子标题“不严格的同源策略”的上面一段，第一句。
+- 错误内容：对于防止脚本窃取**似有**的信息来说，
+- 错误类型：印刷错误。
+- 错误描述：“似有”应该是“私有”
+- 应更正为：对于防止脚本窃取**私有**的信息来说，
 
