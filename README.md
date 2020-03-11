@@ -452,8 +452,7 @@ Array.isArray = Array.isArray || function (o) {
 
 - 位置：例13-1
 - 错误内容：示例代码可以运行但不合理。
-- 错误原因：示例代码可以运行但不合理。
-- 错误解释：代码中使用了for遍历elements，而实际html只有`<div class="reveal">`
+- 错误解释：代码中使用了for遍历elements，而实际html只有一个`<div class="reveal">`
 - 应更正为：https://github.com/davidflanagan/javascript6_examples/blob/master/examples/13.01.reveal.html
 
 
@@ -463,8 +462,6 @@ Array.isArray = Array.isArray || function (o) {
 - 位置：p317，10.1.4节最后一段的第一句话。
 
 - 错误内容：HTML中定义的事件处理程序的属性可以包含任意条JavaScript语句，相互之间用**逗号**分隔。
-
-- 错误类型：翻译错误。
 
 - 错误描述：应该是用**分号**分隔，而不是逗号，JavaScript的语句是使用分号分隔的。
 
@@ -480,8 +477,6 @@ Array.isArray = Array.isArray || function (o) {
 
 - 错误内容：它们可以看到自己的`<script>`元素和它们之前的所有文档元素，并且可能或**干脆不可能**访问其他的文档内容。
 
-- 错误类型：翻译错误。
-
 - 错误描述：这里翻译有点奇怪，因为async是异步加载，下载完成之后会尽快执行，不能确定解析器解析到哪一行HTML代码，所以不确定能够访问哪一些HTML代码，**可能也可能不能**访问其他的文档内容。这里翻译加了“干脆”两字有点奇怪。
 
   犀牛书英文版原文：They can see their own `<script>` element and all document  elements that come before it, and **may or may not** have access to additional document content.
@@ -495,8 +490,69 @@ Array.isArray = Array.isArray || function (o) {
 ### 13.6.2 同源策略
 
 - 位置：P336，子标题“不严格的同源策略”的上面一段，第一句。
-- 错误内容：对于防止脚本窃取**似有**的信息来说，
-- 错误类型：印刷错误。
-- 错误描述：“似有”应该是“私有”
-- 应更正为：对于防止脚本窃取**私有**的信息来说，
+- 错误内容：对于防止脚本窃取**似有**的信息来说。
+- 错误描述：印刷错误。“似有”应该是“私有”。
+- 应更正为：对于防止脚本窃取**私有**的信息来说。
 
+
+
+
+
+## 第十八章 脚本化 http
+
+### 18.1 使用 XMLHttpRequest
+
+- 位置：P487，页底的方框中的内容。
+
+- 错误内容：IE7之前的版本不支持**非标准**的XMLHttpRequest()构造函数。
+
+- 错误描述：翻译错误。此处应该是“当前标准”（now-standard），而不是“非标准”。结合上下文，这句话的意思是IE7之前的版本支持ActiveX对象，但不支持XMLHttpRequest()构造函数。
+
+  英文版原文：The now-standard XMLHttpRequest() constructor is not supported before IE7.
+
+- 应更正为：IE7之前的版本不支持**当前标准**的XMLHttpRequest()构造函数。
+
+
+
+### 18.1.1 指定请求
+
+- 位置：P490，中间方框中“顺序问题”中的内容。
+- 错误内容：例如，setRequestHeader()方法的调用必须在调用open()**之前**但在调用send()**之后**，否则它将抛出异常。
+
+- 错误描述：翻译错误。作者的意思应该是：XMLHttpRequest API的设计似乎将每个方法都写入网络流，所以顺序很重要（verb、URL -> header -> body），所以setRequestHeader（header）应该在open（verb、URL）和send（body）的之间。
+
+  英文版原文：for example, must be called after you call open() and before you call send() or it will throw an exception.
+
+- 应修改为：例如，setRequestHeader()方法的调用必须在调用open()**之后**但在调用send()**之前**，否则它将抛出异常。
+
+
+
+### 18.1.3 编码请求主体
+
+- 位置：P496中间，例18-6上面的段落
+
+- 错误内容：GET请求**从来没有**主体，所以需要发送给服务器的表单编码**数据“负载”**要作为URL（**后跟一个问好**）的查询部分。
+
+- 错误描述：这里有3个问题：
+
+  1. 我感觉“never have”翻译成“绝对没有”更好，之前在P490介绍`request.send(null)`方法的时候，也翻译成了“GET请求绝对没有主体,”（GET requests never have a body, so you should pass null or omit the argument.）
+
+  2. payload，数据传输中的实际信息称作payload（好像更多的翻译为“有效负载”或“有效载荷”），也称作“实际数据”，这部分是数据传输的基本目的，其余的（HTTP请求头等）则为“开销数据”。这里的意思应该是，POST的实际数据放在body中，而GET没有body，所以实际数据要放在URL的query部分。
+  3. “后跟一个问号”，这里应该翻译成“跟在问号后面”。URL规范中，search的格式为：`?query=string`，所以`?`后面的表示query。
+
+  英文原文：GET requests never have a body, so the “payload” of formencoded data has to be sent to the server as the query portion of the URL (following a question mark).
+
+- 应修改为：GET请求绝对没有body，所以表单编码数据的“有效载荷”作为URL的query部分（跟在问号后面）被发送到服务器。
+
+
+
+### 18.1.4 HTTP 进度事件
+
+- 位置：P500，18.1.4节第6段。
+- 错误内容：可以通过 `XMLHttpRequest` 对象的 `addEventListener()` 方法为这些**progress事件**中的每个都注册处理程序。
+
+- 错误描述：翻译错误，英文原文中有“progress event**s**”和“progress event”两个名词。“progress events”在本节中泛指各类**“进度事件”**，如：load、abort、progress等，在本节中应该翻译成**“进度事件”**，就如本节标题：“18.1.4 HTTP进度事件”。巧合的是这些进度事件中，有个叫“progress event”（本节第二段介绍），指的是 `MLHttpRequest.onprogress`事件，中文版应该翻译为 **“progress事件”**。此处的意思应该是：可以用addEventListener()注册各类**进度事件**，也可以使用更容易的处理程序属性，比如onprogress、onload。
+
+  英文原文：You can call the addEventListener() method of the XMLHttpRequest object register handlers for each of these progress events.
+
+- 应修改为：你可以调用 `XMLHttpRequest` 对象的 `addEventListener()` 方法注册每一个进度事件。
