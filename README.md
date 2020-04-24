@@ -551,7 +551,7 @@ Array.isArray = Array.isArray || function (o) {
 - 位置：P500，18.1.4节第6段。
 - 错误内容：可以通过 `XMLHttpRequest` 对象的 `addEventListener()` 方法为这些**progress事件**中的每个都注册处理程序。
 
-- 错误描述：翻译错误，英文原文中有“progress event**s**”和“progress event”两个名词。“progress events”在本节中泛指各类**“进度事件”**，如：load、abort、progress等，在本节中应该翻译成**“进度事件”**，就如本节标题：“18.1.4 HTTP进度事件”。巧合的是这些进度事件中，有个叫“progress event”（本节第二段介绍），指的是 `MLHttpRequest.onprogress`事件，中文版应该翻译为 **“progress事件”**。此处的意思应该是：可以用addEventListener()注册各类**进度事件**，也可以使用更容易的处理程序属性，比如onprogress、onload。
+- 错误描述：翻译错误，英文原文中有“progress event**s**”和“progress event”两个名词。“progress events”在本节中泛指各类 **“进度事件”**，如：load、abort、progress等，在本节中应该翻译成 **“进度事件”**，就如本节标题：“18.1.4 HTTP进度事件”。巧合的是这些进度事件中，有个叫“progress event”（本节第二段介绍），指的是 `MLHttpRequest.onprogress`事件，中文版应该翻译为 **“progress事件”**。此处的意思应该是：可以用addEventListener()注册各类**进度事件**，也可以使用更容易的处理程序属性，比如onprogress、onload。
 
   英文原文：You can call the addEventListener() method of the XMLHttpRequest object register handlers for each of these progress events.
 
